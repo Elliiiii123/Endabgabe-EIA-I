@@ -32,16 +32,15 @@ body {
 
 h1 {
     position: absolute;
-    text-align: center;
-    top: 0%;
+    top: 0%;    
+    left: 52.5%; /* Änderung: Setze den linken Rand auf 50% */
+    transform: translateX(-50%); /* Änderung: Zentriere horizontal */
     font-family: 'Roboto', sans-serif;
     font-size: 27px;
     font-weight: 500;
     text-transform: uppercase;
     color: rgb(255, 255, 255);
     display: inline-block;
-    left: 50%; /* Änderung: Setze den linken Rand auf 50% */
-    transform: translateX(-50%); /* Änderung: Zentriere horizontal */
     margin: 0;
     width: 40%;
     padding: 3px;
@@ -51,7 +50,7 @@ h1 {
 
 .nav a {
 
-
+    font-family: 'Roboto', sans-serif;
     color: white; /* Text color of the links */
     text-decoration: none; /* Remove underline from links */
     padding: 10px; /* Adjust the padding as needed */
@@ -203,7 +202,13 @@ footer {
     top: 97%;
     padding: 20px;
     position: relative;
-    z-index: 1 /* Ensure the footer is on top of the background */
+    z-index: 1 /* Ensure the footer is on top of the background */;
+    font-family: 'Roboto', sans-serif;
     
+}
+
+h2 {
+    font-size: 27px;
+    font-weight: 500;
 }
 

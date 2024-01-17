@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Nabla&display=swap');
+
+body {
+    background-color: rgb(210, 245, 255);
+    margin: 0;
+    padding: 0;
+    height: 100vh; 
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    
+}
+
+.Main-Background {
+    position: absolute;
+    left: 0%;
+    top: 25%;
+    width: 100%;
+    height: 70%;
+
+    
+}
+
+.nav {
+    background-color: rgb(109, 184, 241); /* Background color of the navigation bar */
+    padding: 10px; /* Adjust the padding as needed */
+    text-align:left;
+    position: fixed;
+    width: 110%;
+    top: 0;
+    z-index: 2; /* Ensure the navigation bar is on top of the background */
+}
+
+.nav a:hover {
+    background-color: rgb(205, 237, 255); /* Background color on hover */
+}
+
+.nav a {
+
+    font-family: 'Roboto', sans-serif;
+    color: white; /* Text color of the links */
+    text-decoration: none; /* Remove underline from links */
+    padding: 10px; /* Adjust the padding as needed */
+}
+
+.Container {
+    min-height: 95vh; /* Mindesthöhe des Hauptbereichs auf volle Bildschirmhöhe setzen */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+main {
+    flex-grow: 1; /* Hauptbereich wächst, um den verfügbaren Platz zu füllen */
+}
+
+h1 {
+    position: absolute;
+    top: 0%;    
+    left: 52.5%; /* Änderung: Setze den linken Rand auf 50% */
+    transform: translateX(-50%); /* Änderung: Zentriere horizontal */
+    font-family: 'Roboto', sans-serif;
+    font-size: 27px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    display: inline-block;
+    margin: 0;
+    width: 40%;
+    padding: 3px;
+    box-sizing: border-box
+    /*gestaltung der Überschrift*/
+}
+
+h2{
+    position: absolute;
+    top: 15%;    
+    left: 50%; /* Änderung: Setze den linken Rand auf 50% */
+    transform: translateX(-50%); /* Änderung: Zentriere horizontal */
+    font-family: 'Roboto', sans-serif;
+    font-size: 27px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    color: rgb(109, 184, 241);
+    display: inline-block;
+    margin: 0;
+    width: 40%;
+    padding: 3px;
+    box-sizing: border-box
+    /*gestaltung der Überschrift*/
+}
+
+#start-button {
+    background-color: rgb(109, 184, 241);
+    border-color: rgb(56, 134, 194);
+    border-style: solid;
+    position: absolute;
+    top: 43%;
+    left: 48%; /* Horizontal anordnen */
+    transform: translateX(-50%); /* die Button weite wird abgezogen */
+    padding: 35px 70px; /* Adjust padding as needed */
+    font-size: 16px; /* Adjust font size as needed */
+    border-radius: 20px;
+    cursor: pointer; /* Pointer Hand damit User Button erkennt*/
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Button Schatten */
+
+}
+
+.ButtonText {
+    color: aliceblue;
+    text-decoration: none;
+    font-size: 40px;
+    font-family: 'Roboto', sans-serif;
+}
+
+footer {
+    background-color: rgb(109, 184, 241);
+    color: white;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: auto;
+    bottom: 0;
+    padding: 20px;
+    position: relative;
+    height: 358px;
+    z-index: 1; /* Der footer ist über dem Hintergrund */
+    text-align:left;
+    font-family: 'Roboto', sans-serif;
+    line-height: 240%;
+}
+
+h3 {
+    font-size: 27px;
+    font-weight: 500;
+}
+
+
+
+
+
+
+
+
+
+
