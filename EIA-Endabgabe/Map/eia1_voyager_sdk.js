@@ -1,5 +1,6 @@
-import { updateFahrradPosition } from "./script.js";
-import { checkCoordinatesForPopups } from "./script.js";
+//importierte Funktionen aus map.js um Koordinaten zu erhalten
+import { updateFahrradPosition } from "./map.js";
+import { checkCoordinatesForPopups } from "./map.js";
 
 let dataStream = '';
 
@@ -71,93 +72,80 @@ function extractData(data) {
 }
 
 function eventHandler(data) {
+    // Parameter data erhält informationen über Koordinaten
     switch (data.id) {
         case 12:
             if (data.id == 12 && data.intensity < config.sensitivityThresholdT1) {
                 console.log(data);
                 handleTouch12();
-                checkCoordinatesForPopups();
+                checkCoordinatesForPopups();//Koordinate um PopUp Fenster zu aktibieren wird überprüft
             }
             break;
         case 13:
             if (data.id == 13 && data.intensity < config.sensitivityThresholdT2) {
                 console.log(data);
-                handleTouch13();
-                checkCoordinatesForPopups();
+                handleTouch13();//handleTouch Funktion wird ausgeführt
+                checkCoordinatesForPopups();//Koordinate um PopUp Fenster zu aktibieren wird überprüft
             }
             break;
         case 14:
             if (data.id == 14 && data.intensity < config.sensitivityThresholdT2) {
                 console.log(data);
-                handleTouch14();
-                checkCoordinatesForPopups();
+                handleTouch14();//handleTouch Funktion wird ausgeführt
+                checkCoordinatesForPopups();//Koordinate um PopUp Fenster zu aktibieren wird überprüft
             }
             break;                      
         case 27:
             if (data.id == 27 && data.intensity < config.sensitivityThresholdT2) {    
                 console.log(data);
-                handleTouch27();
-                checkCoordinatesForPopups();
+                handleTouch27();//handleTouch Funktion wird ausgeführt
+                checkCoordinatesForPopups();//Koordinate um PopUp Fenster zu aktibieren wird überprüft
             }
-            break; 
-        case 32:
-            if (data.id == 32 && data.intensity < config.sensitivityThresholdT2) {
-                console.log(data);
-                handleTouch32();
-                checkCoordinatesForPopups();
-                }
-            break;
-        case 33:
-            if (data.id == 33 && data.intensity < config.sensitivityThresholdT2) {
-                console.log(data);
-                handleTouch33();
-                checkCoordinatesForPopups();
-                }
-            break;                                      
     }
 }
 
 
-
+//Fahrrad und Fahrrad Wrapper wird ausgewählt
 let fahrrad = document.querySelector(".fahrrad");
 let fahrradWrapper = document.querySelector(".fahrradWrapper");
 
-let rotation = 20;
-let translateY = 0;
+let translateY = 0;//bewegung erst neutral
 let translateX = 0;
 
 function handleLoaded() {
-
 }
+
+//Funktion die bei HandleTouch 12 ausgeführt wird
 function handleTouch12() {
-    translateX -= 5;
+    translateX -= 10; //der Fahrrad Wrapper bewegt sich -10 auf der X Achse
     fahrradWrapper.style.transform = "translateX(" + translateX + "px)";
-    updateFahrradPosition(-5, 0);
+    // Aktualisierung der Fahrradposition und überprüfe die Koordinaten für Popups
+    updateFahrradPosition(-10, 0);
     checkCoordinatesForPopups();
 }
+//Funktion die bei HandleTouch 13 ausgeführt wird
 function handleTouch13() {
-    translateY -= 10;
+    translateY -= 10;//der Fahrrad Wrapper bewegt sich -10 auf der Y Achse
     fahrrad.style.transform = "translateY(" + translateY + "px)";
+    // Aktualisierung der Fahrradposition und überprüfe die Koordinaten für Popups
     updateFahrradPosition(0, -10);
     checkCoordinatesForPopups();
 }
+//Funktion die bei HandleTouch 14 ausgeführt wird
 function handleTouch14() {
-    translateY += 10;
+    translateY += 10;//der Fahrrad Wrapper bewegt sich 10 auf der Y Achse
     fahrrad.style.transform = "translateY(" + translateY + "px)";
+    // Aktualisierung der Fahrradposition und überprüfe die Koordinaten für Popups
     updateFahrradPosition(0, 10);
     checkCoordinatesForPopups();
 }
+//Funktion die bei HandleTouch 27 ausgeführt wird
 function handleTouch27() {
-    translateX += 5;
+    translateX += 10;//der Fahrrad Wrapper bewegt sich 10 auf der X Achse
     fahrradWrapper.style.transform = "translateX(" + translateX + "px)";
-    updateFahrradPosition(5, 0);
+        // Aktualisierung der Fahrradposition und überprüfe die Koordinaten für Popups
+    updateFahrradPosition(10, 0);
     checkCoordinatesForPopups();
-}
-function handleTouch32() {
-
-}
-function handleTouch33() {
-
 }
 
 /**
@@ -188,13 +176,6 @@ window.addEventListener("keypress", function (event) {
             handleTouch27();
             break;
         case "5":
-            handleTouch32();
-            break;
-        case "6":
-            handleTouch33();
-            break;
-        default:
-            break;
     }
 })
 
