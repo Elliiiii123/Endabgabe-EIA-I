@@ -185,7 +185,7 @@ h3 {
 
 /*Styling des Close-Buttons*/
 #close-button {
-    position: relative;
+    position: absolute;
     top: 90%;
     font-family: 'Roboto', sans-serif;
     color: rgb(109, 184, 241);
